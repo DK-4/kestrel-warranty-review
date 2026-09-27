@@ -1,0 +1,288 @@
+{
+  "validation_months": [
+    "2026-04",
+    "2026-05",
+    "2026-06"
+  ],
+  "fit_period": {
+    "start": "2025-04-01 03:24:00",
+    "end": "2026-03-31 23:17:00",
+    "n_claims": 9015,
+    "n_fraud": 96
+  },
+  "val_period": {
+    "start": "2026-04-01 00:49:00",
+    "end": "2026-06-30 23:40:00",
+    "n_claims": 2131,
+    "n_fraud": 45
+  },
+  "feature_cols": [
+    "partner_id_hist_rate",
+    "partner_id_prior_n",
+    "ptype_hist_rate",
+    "global_hist_rate",
+    "tenure_days",
+    "days_since_purchase",
+    "claim_amount_inr",
+    "claim_to_price_ratio",
+    "customer_prior_claims",
+    "photo_attached_bin",
+    "partner_inspected_bin",
+    "is_small_claim",
+    "post_inspection_policy_change",
+    "desc_len",
+    "warranty_months"
+  ],
+  "results": {
+    "baseline_do_nothing": {
+      "threshold": 0.5,
+      "accuracy": 0.9788831534490849,
+      "n_predicted_positive": 0,
+      "precision": null,
+      "recall": 0.0,
+      "f1": null,
+      "roc_auc": null,
+      "pr_auc": null,
+      "confusion_matrix": {
+        "tn": 2086,
+        "fp": 0,
+        "fn": 45,
+        "tp": 0
+      },
+      "precision_at_k": {
+        "k": 120,
+        "precision_at_k": 0.008333333333333333,
+        "fraud_caught": 1,
+        "fraud_total": 45,
+        "recall_at_k": 0.022222222222222223
+      },
+      "rupee_impact": {
+        "k": 120,
+        "n_tp_in_topk": 1,
+        "n_fp_in_topk": 119,
+        "gross_fraud_value_caught_inr": 1199.0,
+        "investigation_cost_inr": 31200,
+        "goodwill_cost_inr": 45220,
+        "net_value_inr": -75221.0,
+        "total_fraud_value_in_period_inr": 104109.0,
+        "missed_fraud_value_inr": 102910.0
+      }
+    },
+    "logistic_regression": {
+      "threshold": 0.5,
+      "accuracy": 0.9751290473955889,
+      "n_predicted_positive": 12,
+      "precision": 0.16666666666666666,
+      "recall": 0.044444444444444446,
+      "f1": 0.07017543859649122,
+      "roc_auc": 0.7002237136465325,
+      "pr_auc": 0.10132543803772776,
+      "confusion_matrix": {
+        "tn": 2076,
+        "fp": 10,
+        "fn": 43,
+        "tp": 2
+      },
+      "precision_at_k": {
+        "k": 120,
+        "precision_at_k": 0.075,
+        "fraud_caught": 9,
+        "fraud_total": 45,
+        "recall_at_k": 0.2
+      },
+      "rupee_impact": {
+        "k": 120,
+        "n_tp_in_topk": 9,
+        "n_fp_in_topk": 111,
+        "gross_fraud_value_caught_inr": 33975.0,
+        "investigation_cost_inr": 31200,
+        "goodwill_cost_inr": 42180,
+        "net_value_inr": -39405.0,
+        "total_fraud_value_in_period_inr": 104109.0,
+        "missed_fraud_value_inr": 70134.0
+      }
+    },
+    "hist_gradient_boosting": {
+      "threshold": 0.5,
+      "accuracy": 0.9779446269357109,
+      "n_predicted_positive": 10,
+      "precision": 0.4,
+      "recall": 0.08888888888888889,
+      "f1": 0.14545454545454545,
+      "roc_auc": 0.6590923617769255,
+      "pr_auc": 0.10971314330217288,
+      "confusion_matrix": {
+        "tn": 2080,
+        "fp": 6,
+        "fn": 41,
+        "tp": 4
+      },
+      "precision_at_k": {
+        "k": 120,
+        "precision_at_k": 0.08333333333333333,
+        "fraud_caught": 10,
+        "fraud_total": 45,
+        "recall_at_k": 0.2222222222222222
+      },
+      "rupee_impact": {
+        "k": 120,
+        "n_tp_in_topk": 10,
+        "n_fp_in_topk": 110,
+        "gross_fraud_value_caught_inr": 28745.0,
+        "investigation_cost_inr": 31200,
+        "goodwill_cost_inr": 41800,
+        "net_value_inr": -44255.0,
+        "total_fraud_value_in_period_inr": 104109.0,
+        "missed_fraud_value_inr": 75364.0
+      }
+    },
+    "hist_gradient_boosting_balanced": {
+      "threshold": 0.5,
+      "accuracy": 0.9774753636790239,
+      "n_predicted_positive": 13,
+      "precision": 0.38461538461538464,
+      "recall": 0.1111111111111111,
+      "f1": 0.1724137931034483,
+      "roc_auc": 0.6050814956855226,
+      "pr_auc": 0.1041418847681198,
+      "confusion_matrix": {
+        "tn": 2078,
+        "fp": 8,
+        "fn": 40,
+        "tp": 5
+      },
+      "precision_at_k": {
+        "k": 120,
+        "precision_at_k": 0.08333333333333333,
+        "fraud_caught": 10,
+        "fraud_total": 45,
+        "recall_at_k": 0.2222222222222222
+      },
+      "rupee_impact": {
+        "k": 120,
+        "n_tp_in_topk": 10,
+        "n_fp_in_topk": 110,
+        "gross_fraud_value_caught_inr": 29386.0,
+        "investigation_cost_inr": 31200,
+        "goodwill_cost_inr": 41800,
+        "net_value_inr": -43614.0,
+        "total_fraud_value_in_period_inr": 104109.0,
+        "missed_fraud_value_inr": 74723.0
+      }
+    }
+  },
+  "champion_model": "hist_gradient_boosting",
+  "k_sweep": [
+    {
+      "k": 10,
+      "n_tp_in_topk": 4,
+      "n_fp_in_topk": 6,
+      "gross_fraud_value_caught_inr": 19055.0,
+      "investigation_cost_inr": 2600,
+      "goodwill_cost_inr": 2280,
+      "net_value_inr": 14175.0,
+      "total_fraud_value_in_period_inr": 104109.0,
+      "missed_fraud_value_inr": 85054.0
+    },
+    {
+      "k": 20,
+      "n_tp_in_topk": 7,
+      "n_fp_in_topk": 13,
+      "gross_fraud_value_caught_inr": 25015.0,
+      "investigation_cost_inr": 5200,
+      "goodwill_cost_inr": 4940,
+      "net_value_inr": 14875.0,
+      "total_fraud_value_in_period_inr": 104109.0,
+      "missed_fraud_value_inr": 79094.0
+    },
+    {
+      "k": 30,
+      "n_tp_in_topk": 7,
+      "n_fp_in_topk": 23,
+      "gross_fraud_value_caught_inr": 25015.0,
+      "investigation_cost_inr": 7800,
+      "goodwill_cost_inr": 8740,
+      "net_value_inr": 8475.0,
+      "total_fraud_value_in_period_inr": 104109.0,
+      "missed_fraud_value_inr": 79094.0
+    },
+    {
+      "k": 40,
+      "n_tp_in_topk": 7,
+      "n_fp_in_topk": 33,
+      "gross_fraud_value_caught_inr": 25015.0,
+      "investigation_cost_inr": 10400,
+      "goodwill_cost_inr": 12540,
+      "net_value_inr": 2075.0,
+      "total_fraud_value_in_period_inr": 104109.0,
+      "missed_fraud_value_inr": 79094.0
+    },
+    {
+      "k": 50,
+      "n_tp_in_topk": 7,
+      "n_fp_in_topk": 43,
+      "gross_fraud_value_caught_inr": 25015.0,
+      "investigation_cost_inr": 13000,
+      "goodwill_cost_inr": 16340,
+      "net_value_inr": -4325.0,
+      "total_fraud_value_in_period_inr": 104109.0,
+      "missed_fraud_value_inr": 79094.0
+    },
+    {
+      "k": 60,
+      "n_tp_in_topk": 7,
+      "n_fp_in_topk": 53,
+      "gross_fraud_value_caught_inr": 25015.0,
+      "investigation_cost_inr": 15600,
+      "goodwill_cost_inr": 20140,
+      "net_value_inr": -10725.0,
+      "total_fraud_value_in_period_inr": 104109.0,
+      "missed_fraud_value_inr": 79094.0
+    },
+    {
+      "k": 80,
+      "n_tp_in_topk": 8,
+      "n_fp_in_topk": 72,
+      "gross_fraud_value_caught_inr": 26055.0,
+      "investigation_cost_inr": 20800,
+      "goodwill_cost_inr": 27360,
+      "net_value_inr": -22105.0,
+      "total_fraud_value_in_period_inr": 104109.0,
+      "missed_fraud_value_inr": 78054.0
+    },
+    {
+      "k": 100,
+      "n_tp_in_topk": 10,
+      "n_fp_in_topk": 90,
+      "gross_fraud_value_caught_inr": 28745.0,
+      "investigation_cost_inr": 26000,
+      "goodwill_cost_inr": 34200,
+      "net_value_inr": -31455.0,
+      "total_fraud_value_in_period_inr": 104109.0,
+      "missed_fraud_value_inr": 75364.0
+    },
+    {
+      "k": 120,
+      "n_tp_in_topk": 10,
+      "n_fp_in_topk": 110,
+      "gross_fraud_value_caught_inr": 28745.0,
+      "investigation_cost_inr": 31200,
+      "goodwill_cost_inr": 41800,
+      "net_value_inr": -44255.0,
+      "total_fraud_value_in_period_inr": 104109.0,
+      "missed_fraud_value_inr": 75364.0
+    }
+  ],
+  "k_sweep_peak": {
+    "k": 20,
+    "n_tp_in_topk": 7,
+    "n_fp_in_topk": 13,
+    "gross_fraud_value_caught_inr": 25015.0,
+    "investigation_cost_inr": 5200,
+    "goodwill_cost_inr": 4940,
+    "net_value_inr": 14875.0,
+    "total_fraud_value_in_period_inr": 104109.0,
+    "missed_fraud_value_inr": 79094.0
+  },
+  "recommended_monthly_k": 7
+}

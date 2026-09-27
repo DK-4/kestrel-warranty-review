@@ -1,0 +1,23 @@
+# Kestrel client data must never go in a public repo (ops-policy §10).
+data/
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Generated model binaries (large, regenerable via src/predict.py — not tracked)
+models/*.joblib
+
+# predictions.csv and reports/*.json are the actual deliverables/evidence —
+# intentionally NOT ignored, they belong in the repo.
+
+# OS / editor
+.DS_Store
+.vscode/

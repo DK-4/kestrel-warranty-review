@@ -1,0 +1,27 @@
+{
+  "model": "hist_gradient_boosting",
+  "trained_on_rows": 11146,
+  "trained_on_range": [
+    "2025-04-01 03:24:00",
+    "2026-06-30 23:40:00"
+  ],
+  "feature_cols": [
+    "partner_id_hist_rate",
+    "partner_id_prior_n",
+    "ptype_hist_rate",
+    "global_hist_rate",
+    "tenure_days",
+    "days_since_purchase",
+    "claim_amount_inr",
+    "claim_to_price_ratio",
+    "customer_prior_claims",
+    "photo_attached_bin",
+    "partner_inspected_bin",
+    "is_small_claim",
+    "post_inspection_policy_change",
+    "desc_len",
+    "warranty_months"
+  ],
+  "global_rate": 0.012650278126682218,
+  "recommended_monthly_k": 7
+}

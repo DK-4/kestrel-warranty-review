@@ -1,0 +1,18 @@
+pandas==3.0.2
+numpy==2.4.4
+scikit-learn==1.8.0
+joblib==1.5.3
+pytest>=7.4
+
+# Pinned exactly (not >=) because HistGradientBoostingClassifier is not
+# guaranteed bit-identical across scikit-learn versions even with a fixed
+# random_state -- confirmed directly: on scikit-learn 1.9.1 vs 1.8.0, the
+# same code with the same seed produced a different champion-model fit and
+# a different k-sweep peak (k=10 vs k=20). Pin these to reproduce the exact
+# numbers in README.md / reports/validation_report.json.
+
+# Added for the API + UI:
+fastapi>=0.110
+uvicorn>=0.29
+streamlit>=1.32
+python-dotenv>=1.0
